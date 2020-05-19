@@ -23,10 +23,19 @@ if (diagrama=='menu'){
     
     
         
-        if (item==18){
-        window.open('http://127.0.0.1:5001','_self');
+   if (item==18){
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5001','_self');
     }
     
+   if (item==19){
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5002','_self');
+    }
+    
+   if (item==20){
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5003','_self');
+    }
+        
+        
     
 }
 
