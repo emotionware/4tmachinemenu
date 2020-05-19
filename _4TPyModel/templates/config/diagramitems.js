@@ -17,10 +17,17 @@ if (diagrama=='menu'){
     if (item==14){
         window.open('/static/diagramas/index.html?diagrama=menu','_self');
     }
+ 
     
-    if (item==11){
-        window.open('../../adminzone','_self');
+ 
+    
+    
+        
+        if (item==18){
+        window.open('http://127.0.0.1:5001','_self');
     }
+    
+    
 }
 
  
