@@ -24,18 +24,20 @@ if (diagrama=='menu'){
     
         
    if (item==18){
-        window.open(window.location.protocol + '//' + window.location.hostname + ':5001','_self');
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5001','_blank');
     }
     
    if (item==19){
-        window.open(window.location.protocol + '//' + window.location.hostname + ':5002','_self');
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5002','_blank');
     }
     
    if (item==20){
-        window.open(window.location.protocol + '//' + window.location.hostname + ':5003','_self');
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5003','_blank');
     }
         
-        
+         if (item==22){
+        window.open('http://portal.soluboxes.com','_blank');
+    } 
     
 }
 
