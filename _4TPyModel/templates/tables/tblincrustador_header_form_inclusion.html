@@ -1,0 +1,83 @@
+
+
+<script>
+
+
+
+
+
+$(document).ready(function () {
+var boton_3456 = document.createElement("BUTTON");
+boton_3456.innerHTML = "Incrustar";  
+boton_3456.setAttribute("onclick", "metodo3456();return false;");
+boton_3456.setAttribute("style","position:relative;left:140px");
+
+document.getElementById('bottom_ABAJO').appendChild(boton_3456);
+
+
+});	
+ 
+ 
+ 
+ 
+ function metodo3456(){
+
+    //determinando variables
+    var tabla=document.getElementById("TABLA").value;
+    var campo=document.getElementById("CAMPO").value;
+    var componente=$('#IDSYSCOMPONENT').val().value;
+    var pagina=tabla + '_header_form_inclusion';
+    
+    
+    laurl='';
+
+   if ($('#ABAJO').val()==true) {
+	laurl='incrustar?idsyscomponent=' + componente + '&pagina=' + pagina + '&campo=' + campo + '&posicion=bottom_' + campo;
+	       //procesando la incrustacion con Python
+                 $.ajax({
+            async: true,
+            url: laurl
+                    }).then(function (data) {
+                    	
+                    	alert("El componente ha sido insertado. Ahora regenera la página por favor. ");
+                       
+
+                    });
+   }
+   
+   if ($('#ENMEDIO').val()==true) {
+	laurl='incrustar?idsyscomponent=' + componente + '&pagina=' + pagina + '&campo=' + campo + '&posicion=left_' + campo;
+	       //procesando la incrustacion con Python
+                 $.ajax({
+            async: true,
+            url: laurl
+                    }).then(function (data) {
+                    	
+                    	alert("El componente ha sido insertado. Ahora regenera la página por favor. ");
+                       
+
+                    });
+   }
+   
+   if ($('#ARRIBA').val()==true) {
+	laurl='incrustar?idsyscomponent=' + componente + '&pagina=' + pagina + '&campo=' + campo + '&posicion=top_' + campo;
+	       //procesando la incrustacion con Python
+                 $.ajax({
+            async: true,
+            url: laurl
+                    }).then(function (data) {
+                    	
+                    	alert("El componente ha sido insertado. Ahora regenera la página por favor. ");
+                       
+
+                    });
+   }   
+   
+
+   
+}
+
+
+
+</script>
+
