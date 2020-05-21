@@ -2548,8 +2548,11 @@ function hacerclick(e){
       var url_string = window.location.href;
             var url = new URL(url_string);
             var eldiagrama = url.searchParams.get("diagrama");
+            var titulo = url.searchParams.get("titulo");
 
 document.getElementById('nombre').value=eldiagrama;
+document.title=titulo;
+
 
 
 
