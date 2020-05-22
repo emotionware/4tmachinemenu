@@ -38,6 +38,10 @@ if (diagrama=='menu'){
    if (item==23){
         window.open(window.location.protocol + '//' + window.location.hostname + ':5004','_blank');
     }    
+    
+   if (item==24){
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5005','_blank');
+    }        
         
          if (item==22){
         window.open('http://portal.soluboxes.com','_blank');
