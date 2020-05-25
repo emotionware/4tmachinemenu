@@ -43,6 +43,10 @@ if (diagrama=='menu'){
         window.open(window.location.protocol + '//' + window.location.hostname + ':5005','_blank');
     }    
     
+   if (item==25){
+        window.open(window.location.protocol + '//' + window.location.hostname + ':5007','_blank');
+    }       
+    
    if (item==26){
         window.open(window.location.protocol + '//' + window.location.hostname + ':5006','_blank');
     }       
