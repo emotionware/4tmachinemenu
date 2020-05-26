@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>{{ tabletitle | safe }}</title>
@@ -532,6 +532,12 @@ $('#theform').on('validationSuccess', function (event) {
                    $(document).ready(function () {
                     $.ajax({
                         url: "/saverecord" + '?objeto=' + datos + '&idusername=' + Cookies.get('idusername') + '&usuario=' + Cookies.get('username') + '&tipomov=nuevo&idobjeto=' +  $('#IDOBJECT').val()  + '&tabla={{ tablename | safe }}&campokey={{ campokey | safe }}'
+                    ,
+    error: function (request, error) {
+        console.log(arguments);
+        alert("No se guardó, hubo un error: verifique los datos que capturó. Confirme que no intenta registrar valores en campos que no admiten duplicados  ");
+    }
+
                     }).then(function (data) {
 
                        // alert(data);

@@ -250,8 +250,8 @@ class builderadaptation:
             resultado=dbexecutor.executor(sentencia)
             
             #haciendo no editable el campo ID
-            sentencia= "update tblconfigcampos_" + tablename + "  SET HELPTEXT = 'PULSAR ESPACIO EN EL CAMPO PARA MOSTRAR OPCIONES' WHERE BUILDTYPE='*';"
-            resultado=dbexecutor.executor(sentencia)  
+            sentencia= "update tblconfigcampos_" + tablename + "  SET HELPTEXT = ' ' WHERE BUILDTYPE='*';"
+            resultado=dbexecutor.executor(sentencia)
 
 
             #haciendo no editable el campo ID
