@@ -15,6 +15,44 @@
     <script src="https://unpkg.com/js-polyfills/keyboard.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+         <!-- Cookie Control -->
+    <script src="/static/scripts/js.cookie.js"></script>
+<script>
+
+
+            //check log in/////////////
+        if (Cookies.get('username') != null && Cookies.get('esadmin') != null && Cookies.get('token') != null  ) {
+            //Show the page
+
+        }
+        else {
+            //Redirect to login
+            window.open("../../../login", "_self");
+        }
+
+
+        //validando TOKEN  Cookies.get('token')
+             $(document).ready(function () {
+                 $.ajax({
+                        url: "../../../validartoken" + '?token=' + Cookies.get('token')
+                    }).then(function (data) {
+
+                       // if (data=='valido'){}
+
+                     if (data=='novalido'){
+                            window.open("../../../login", "_self");
+                        }
+
+                    });
+             });
+
+</script>
+
+
+
 </head>
 <body>
 

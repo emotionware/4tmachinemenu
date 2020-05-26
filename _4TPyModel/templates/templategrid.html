@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>{{ tabletitle | safe }}</title>
@@ -215,7 +215,20 @@
 
 
 
+        //validando TOKEN  Cookies.get('token')
+             $(document).ready(function () {
+                 $.ajax({
+                        url: "/validartoken" + '?token=' + Cookies.get('token')
+                    }).then(function (data) {
 
+                       // if (data=='valido'){}
+
+                     if (data=='novalido'){
+                            window.open("login", "_self");
+                        }
+
+                    });
+                 });
 
 
 
@@ -969,7 +982,7 @@ setTimeout(function(){
 
 
 
-            <div id="grid" style="height:300px;position:relative; top:-5px; left:10px"></div>
+            <div id="grid" style="height:300px;position:relative; top:0px; left:10px"></div>
             <br />
 
 

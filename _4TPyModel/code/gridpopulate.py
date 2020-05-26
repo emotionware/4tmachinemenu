@@ -697,11 +697,53 @@ def esvalido(username, password):
     # print(campos[0] + '999999999999999999999999999999999999999999999999999999999999999999')
 
     if campos[0] > 0:
-        # guardar token
+        guardartoken(token)
         return token
     else:
         return 'No autorizado'
 
+
+def valtoken(token):
+    mydb = mysql.connector.connect(
+        host=hostx,
+        user=userx,
+        passwd=passwdx,
+        database=databasex,
+        port=portx
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT count(*) as total from tbltoken where token='" + token + "'")
+    myresult = mycursor.fetchall()
+
+    # payload = []
+    # content = {}
+    campos = []
+    for result in myresult:
+        # content = {'COLUMN_NAME': result[0], 'DATA_TYPE': result[1], 'COLUMN_COMMENT': result[2]}
+        # payload.append(content)
+        # content = {}
+        campos.append(result[0])
+
+    # cursor.fetchall() to fetch all rows
+    # cursor.fetchone() to fetch single row
+    # cursor.fetchmany(SIZE) to fetch limited rows
+
+    # print(str(len(campos)) + 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW')
+
+    if (mydb.is_connected()):
+        mycursor.close()
+        mydb.close()
+
+    if campos[0] > 0:
+        return 'valido'
+    else:
+        return 'novalido'
+
+
+
+
+def guardartoken(token):
+    dbexecutor.executor("insert into tbltoken (token,expira,expirado) values ('" + token + "',DATE_ADD(NOW(), INTERVAL 8 HOUR),0);")
 
 def cuentaregistros(tablename):
     mydb = mysql.connector.connect(

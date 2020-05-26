@@ -51,6 +51,7 @@ from _4TPyModel.code.gridpopulate import populatearray
 from _4TPyModel.code.gridpopulate import populate
 from _4TPyModel.code.gridpopulate import populatepropiedad
 from _4TPyModel.code.gridpopulate import populatexlsx
+from _4TPyModel.code.gridpopulate import valtoken
 from _4TPyModel.code.gridpopulate import populatequery
 from _4TPyModel.code.gridpopulate import populatequery2
 from _4TPyModel.code.dbexec import dbexecutor
@@ -826,6 +827,18 @@ def incrustar():
     return 'ok'
 
 
+
+
+@app.route('/validartoken', methods=['POST', 'GET'])
+def validartoken():
+    token = request.args.get('token')
+
+    dbexecutor.executor("call validartokens();")
+
+    return valtoken(token)
+
+
+
 @app.route('/soloadmin', methods=['POST', 'GET'])
 def soloadmin():
         
@@ -877,9 +890,6 @@ def checklogin():
             return redirect('autorizado?emailrespuesta=' + emailrespuesta + '&esadmin=' + esadmin + '&username=' + username + '&idusername=' + str(idusername) + '&token=' + resultado )
         else:
             return redirect('login')
-
-
-
 
 
 def elementosvinculados(tablename):

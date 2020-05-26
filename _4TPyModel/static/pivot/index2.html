@@ -35,6 +35,24 @@
             //Redirect to login
             window.open("../../login", "_self");
         }
+
+
+        //validando TOKEN  Cookies.get('token')
+             $(document).ready(function () {
+                 $.ajax({
+                        url: "../../validartoken" + '?token=' + Cookies.get('token')
+                    }).then(function (data) {
+
+                       // if (data=='valido'){}
+
+                     if (data=='novalido'){
+                            window.open("../../login", "_self");
+                        }
+
+                    });
+             });
+
+
 </script>
 
 
