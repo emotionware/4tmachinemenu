@@ -36,7 +36,7 @@ if (diagrama=='menu'){
     }
     
    if (item==23){
-        window.open(window.location.protocol + '//' + '127.0.0.3' + ':5000','_blank');
+        window.open(window.location.protocol + '//' + '127.0.0.4' + ':5000','_blank');
     }    
     
    if (item==24){
